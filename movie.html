@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreamWatch - Movie</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 id="movie-title"></h1>
+    <video id="movie-player" controls></video>
+
+    <h2>Related Movies</h2>
+    <div class="movie-grid">
+        <div class="movie" onclick="playMovie('movie3.mp4', 'Movie 3')">
+            <img src="poster3.jpg" alt="Movie 3">
+            <p>Movie 3</p>
+        </div>
+        <div class="movie" onclick="playMovie('movie4.mp4', 'Movie 4')">
+            <img src="poster4.jpg" alt="Movie 4">
+            <p>Movie 4</p>
+        </div>
+        <!-- Add more related movies -->
+    </div>
+
+    <script>
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        document.getElementById('movie-title').innerText = getQueryParam('title');
+        document.getElementById('movie-player').src = getQueryParam('video');
+
+        function playMovie(videoSrc, title) {
+            window.location.href = `movie.html?video=${videoSrc}&title=${title}`;
+        }
+    </script>
+</body>
+</html>
