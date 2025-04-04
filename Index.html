@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreamWatch - Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>StreamWatch</h1>
+    <div class="movie-grid">
+        <div class="movie" onclick="playMovie('movie1.mp4', 'Movie 1')">
+            <img src="poster1.jpg" alt="Movie 1">
+            <p>Movie 1</p>
+        </div>
+        <div class="movie" onclick="playMovie('movie2.mp4', 'Movie 2')">
+            <img src="poster2.jpg" alt="Movie 2">
+            <p>Movie 2</p>
+        </div>
+        <!-- Add more movies as needed -->
+    </div>
+    <script>
+        function playMovie(videoSrc, title) {
+            window.location.href = `movie.html?video=${videoSrc}&title=${title}`;
+        }
+    </script>
+</body>
+</html>
